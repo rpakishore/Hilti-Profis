@@ -35,8 +35,12 @@ class MasterModule:
     def __get_sub_dict(self, path_to_key: list[str], basefile: dict) -> dict:
         """Returns the value from a sub-dictionary given the `path_to_key`"""
         _data = basefile.copy()
-        for k in path_to_key:
-            _data = _data[k]
+        try: 
+            for k in path_to_key:
+                _data = _data[k]
+        except Exception:
+            print(f'expected {k=} available {_data.keys()}')
+            raise Exception
         return _data
     
     def __overwrite_dict(self, base_dict: dict, override_dict: dict) -> dict:
@@ -83,3 +87,7 @@ class MasterModule:
     
     def __setitem__(self, idx: str, key) -> None:
         self.data[idx] = key
+        
+    @property
+    def keys(self):
+        return self.data.keys()

@@ -2,11 +2,13 @@
 from pathlib import Path
 
 from hilti_profis import xmlparser
+from hilti_profis.Model import DesignModel
 
 class PE:
     def __init__(self, basefile: Path|None = None) -> None:
         self.basefile: Path = basefile or Path(__file__).parent / 'basefile.pe'
         self.data: dict = {}
+        self.Model = DesignModel(basefile=xmlparser.read_xml(self.basefile))
         
     def __repr__(self) -> str:
         return f'PE(basefile={self.basefile})'

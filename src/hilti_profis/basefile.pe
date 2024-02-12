@@ -423,6 +423,25 @@
         <IsWizardGenerated>false</IsWizardGenerated>
         <LoadCharacteristic i:nil="true" />
       </LoadCombinationEntity>
+      <LoadCombinationEntity>
+        <Id>a6879348-62b6-4aac-9cd0-7dfa8afd4cd0</Id>
+        <ForceZ>0</ForceZ>
+        <ForceX>0</ForceX>
+        <ForceY>0</ForceY>
+        <MomentZ>0</MomentZ>
+        <MomentX>0</MomentX>
+        <MomentY>0</MomentY>
+        <ForceZVariable>0</ForceZVariable>
+        <ForceXVariable>0</ForceXVariable>
+        <ForceYVariable>0</ForceYVariable>
+        <MomentZVariable>0</MomentZVariable>
+        <MomentXVariable>0</MomentXVariable>
+        <MomentYVariable>0</MomentYVariable>
+        <LoadType>Seismic</LoadType>
+        <Comment>Combination 1</Comment>
+        <IsWizardGenerated>false</IsWizardGenerated>
+        <LoadCharacteristic i:nil="true" />
+      </LoadCombinationEntity>
     </LoadCombinations>
     <ImportLoadCombinations>false</ImportLoadCombinations>
     <LoadCombinationsCalculationType>All</LoadCombinationsCalculationType>

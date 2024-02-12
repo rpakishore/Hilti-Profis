@@ -3,6 +3,8 @@ __version__ = "0.0.1"
 
 from .utils.logger import log
 from hilti_profis.main import PE
+from hilti_profis import xmlparser
+
 
 log.info('Template Module Initialized')
 

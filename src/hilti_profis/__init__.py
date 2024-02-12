@@ -1,7 +1,8 @@
-"Placeholder module info"
+"Python binding for generating `.pe` files, for use with Hilti-Profis software."
 __version__ = "0.0.1"
 
 from .utils.logger import log
+from hilti_profis.main import PE
 
 log.info('Template Module Initialized')
 

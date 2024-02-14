@@ -39,9 +39,9 @@
 <!-- Features -->
 ### 1.1. Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Create new custom `.pe` files
+- Modify part/whole of existing `.pe` file
+- Add load cases to anchor design
 
 <!-- Getting Started -->
 ## 2. Getting Started
@@ -98,7 +98,9 @@ from hilti_profis.main import PE
 
 anchor = PE()
 anchor.Model['ProjectName'] = 'TestProject'
+anchor.Model.Loads.Combos.add(Fx=1, Fy=1, Fz=2, Mx=1, My=2, Mz=3, LoadType='Seismic', Comment='LC1')    #Forces in N
 anchor.Model.apply()
+anchor.save('nosync-test.pe')
 ```
 <!-- License -->
 ## 6. License

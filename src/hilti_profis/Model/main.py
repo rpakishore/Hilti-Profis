@@ -14,15 +14,16 @@ class DesignModel(MasterModule):
     def __init__(self, basefile: dict) -> None:
         headerpath = ['ProjectDesignConcreteEntity',]
         submodules_list = [
-            AnchorPlate(basefile=basefile),
-            AnchorLayout(basefile=basefile),
-            Anchor(basefile=basefile),
-            BaseMaterial(basefile=basefile),
-            Loads(basefile=basefile),
-            Options(basefile=basefile),
-            Profile(basefile=basefile),
-            ShearLug(basefile=basefile),
-            Stiffeners(basefile=basefile),
-            Welds(basefile=basefile)
         ]
+        # Submodules
+        self.AnchorPlate = AnchorPlate(basefile=basefile)
+        self.AnchorLayout = AnchorLayout(basefile=basefile)
+        self.Anchor = Anchor(basefile=basefile)
+        self.BaseMaterial = BaseMaterial(basefile=basefile)
+        self.Loads = Loads(basefile=basefile)
+        self.Options = Options(basefile=basefile)
+        self.Profile = Profile(basefile=basefile)
+        self.ShearLug = ShearLug(basefile=basefile)
+        self.Stiffeners = Stiffeners(basefile=basefile)
+        self.Welds = Welds(basefile=basefile)
         super().__init__(basefile, headerpath, submodules_list)

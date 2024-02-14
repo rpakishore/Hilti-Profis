@@ -4,9 +4,7 @@ import uuid
 class Combos(MasterModule):
     def __init__(self, basefile: dict) -> None:
         headerpath = ['ProjectDesignConcreteEntity','Loads', 'LoadCombinations']
-        submodules_list = [
-            
-        ]
+        submodules_list = []
         super().__init__(basefile, headerpath, submodules_list)
         
     def add(self, Fx: float=0, Fy: float=0, Fz: float=0, 

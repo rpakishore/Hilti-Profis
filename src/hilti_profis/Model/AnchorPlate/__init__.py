@@ -5,8 +5,7 @@ from .Ledger import Ledger
 class AnchorPlate(MasterModule):
     def __init__(self, basefile: dict) -> None:
         headerpath = ['ProjectDesignConcreteEntity','AnchorPlate']
-        submodules_list = [
-            Custom(basefile=basefile),
-            Ledger(basefile=basefile)
-        ]
+        submodules_list = []
+        self.Custom = Custom(basefile=basefile)
+        self.Ledger = Ledger(basefile=basefile)
         super().__init__(basefile, headerpath, submodules_list)

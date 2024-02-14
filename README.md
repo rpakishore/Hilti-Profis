@@ -16,7 +16,7 @@
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/rpakishore/Hilti-Profis)
 ![GitHub last commit](https://img.shields.io/github/last-commit/rpakishore/Hilti-Profis)
-
+[![tests](https://github.com/rpakishore/Hilti-Profis/actions/workflows/test.yml/badge.svg)](https://github.com/rpakishore/Hilti-Profis/actions/workflows/test.yml)
 <!-- Table of Contents -->
 <h2>Table of Contents</h2>
 
@@ -70,7 +70,7 @@ Get the latest version directly from github
   git clone https://github.com/rpakishore/Hilti-Profis.git
   cd Hilti-Profis
   pip install flit
-  flit install --production
+  flit install --deps production
 ```
 
 #### 2.3.2. From Pypi

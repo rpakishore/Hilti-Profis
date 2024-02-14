@@ -29,4 +29,7 @@ def __write(filepath: Path|str, data) -> None:
     with open(filepath, 'w') as f:
         f.write(data)
 
-
+def xml_content(data: dict|str) -> str|None:
+    """Write XML to file"""
+    if isinstance(data, dict):
+        return _dict_to_xml(data)

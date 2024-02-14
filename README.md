@@ -97,10 +97,14 @@ Download the git and install via flit
 from hilti_profis.main import PE
 
 anchor = PE()
+
+#Change/Add values
 anchor.Model['ProjectName'] = 'TestProject'
 anchor.Model.Loads.Combos.add(Fx=1, Fy=1, Fz=2, Mx=1, My=2, Mz=3, LoadType='Seismic', Comment='LC1')    #Forces in N
-anchor.Model.apply()
-anchor.save('nosync-test.pe')
+
+anchor.Model.apply()            #Apply the changes
+anchor.xml_content()            #Get contents of `.pe` file
+anchor.save('nosync-test.pe')   #Save file to destination
 ```
 <!-- License -->
 ## 6. License

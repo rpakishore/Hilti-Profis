@@ -39,3 +39,7 @@ class PE:
             else:
                 override_dict[ko] = vo
         return override_dict
+    
+    def xml_content(self) -> str|None:
+        """Returns Str contents of XML file"""
+        return xmlparser.xml_content(data=self.__apply_baseconfig())

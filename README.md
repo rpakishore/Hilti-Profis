@@ -30,8 +30,6 @@
     - [2.3.2. From Pypi](#232-from-pypi)
   - [2.4. Development](#24-development)
 - [3. Usage](#3-usage)
-- [4. Roadmap](#4-roadmap)
-- [5. FAQ](#5-faq)
 - [6. License](#6-license)
 - [7. Contact](#7-contact)
 
@@ -89,35 +87,19 @@ Download the git and install via flit
   git clone https://github.com/rpakishore/Hilti-Profis.git
   cd Hilti-Profis
   pip install flit
-  flit install
+  flit install --pth-file
 ```
 
 <!-- Usage -->
 ## 3. Usage
 
 ```python
-from template_python import Reader, debug
-debug(True) #For debug messages, Can be skipped.
+from hilti_profis.main import PE
 
-# Initialize
-pdf = Reader(filepath=r"textbook.pdf", password=None)
+anchor = PE()
+anchor.Model['ProjectName'] = 'TestProject'
+anchor.Model.apply()
 ```
-
-<!-- Roadmap -->
-## 4. Roadmap
-
-- [x] Set up a skeletal framework
-- [ ] Todo 2
-
-<!-- FAQ -->
-## 5. FAQ
-
-- Question 1
-  - Answer 1
-
-- Question 2
-  - Answer 2
-
 <!-- License -->
 ## 6. License
 

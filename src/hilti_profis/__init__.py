@@ -6,7 +6,7 @@ from hilti_profis.main import PE
 from hilti_profis import xmlparser
 
 
-log.info('Template Module Initialized')
+log.info(f'{" Hilti Profis Module Started ":=^50}')
 
 def debug(status=False):
     """Import this in a new module and enable debug to use debug

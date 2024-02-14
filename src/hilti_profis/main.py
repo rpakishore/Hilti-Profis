@@ -18,7 +18,7 @@ class PE:
         
     def __apply_baseconfig(self) -> dict:
         """Applies cofigs from basefile"""
-        return __update_dict(
+        return self.__update_dict(
             base_dict=xmlparser.read_xml(filepath=self.basefile),
             override_dict=self.data)
 
@@ -26,16 +26,16 @@ class PE:
         """Saves the modified config to file"""
         return xmlparser.save_xml(filepath=filepath, data=self.__apply_baseconfig())
 
-def __update_dict(base_dict: dict, override_dict: dict) -> dict:
-    """Applies dict values from `override_dict` to `base_dict`"""
-    override_dict = override_dict.copy()
-    for kb, vb in base_dict.items():
-        ko = kb
-        vo = override_dict.get(ko)
-        if vo is None:
-            vo = vb
-        if isinstance(vb, dict):
-            kb = __update_dict(vb, vo)
-        else:
-            override_dict[ko] = vo
-    return override_dict
+    def __update_dict(self, base_dict: dict, override_dict: dict) -> dict:
+        """Applies dict values from `override_dict` to `base_dict`"""
+        override_dict = override_dict.copy()
+        for kb, vb in base_dict.items():
+            ko = kb
+            vo = override_dict.get(ko)
+            if vo is None:
+                vo = vb
+            if isinstance(vb, dict):
+                kb = self.__update_dict(vb, vo)
+            else:
+                override_dict[ko] = vo
+        return override_dict

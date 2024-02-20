@@ -8,7 +8,7 @@ requires-python = ">=3.11.0"
 authors = [{name = "Arun Kishore", email = "pypi@rpakishore.co.in"}]
 readme = "README.md"
 license = {file = "LICENSE"}
-classifiers = ["License :: OSI Approved :: MIT License"]
+classifiers = ["License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"]
 dynamic = ["version", "description"]
 dependencies = [
     "xmltodict"       #credentials.py

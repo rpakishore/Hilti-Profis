@@ -31,8 +31,8 @@ class Combos(MasterModule):
         existing = self.data.get('LoadCombinationEntity')
 
         if isinstance(existing, list):
-            self.data['LoadCombinationEntity'] = self.data['LoadCombinationEntity'].append(new_load)
-            return
+            existing.append(new_load)
+            self.data['LoadCombinationEntity'] = existing
         elif isinstance(existing, dict):
             self.data['LoadCombinationEntity'] = [existing, new_load]
         elif existing is None:

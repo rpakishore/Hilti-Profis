@@ -17,6 +17,8 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/rpakishore/Hilti-Profis)
 ![GitHub last commit](https://img.shields.io/github/last-commit/rpakishore/Hilti-Profis)
 [![tests](https://github.com/rpakishore/Hilti-Profis/actions/workflows/test.yml/badge.svg)](https://github.com/rpakishore/Hilti-Profis/actions/workflows/test.yml)
+![PyPI - Version](https://img.shields.io/pypi/v/hilti_profis)
+
 <!-- Table of Contents -->
 <h2>Table of Contents</h2>
 
@@ -101,7 +103,7 @@ anchor = PE()
 #Change/Add values
 anchor.Model['ProjectName'] = 'TestProject'
 anchor.Model.Loads.Combos.add(Fx=1, Fy=1, Fz=2, Mx=1, My=2, Mz=3, LoadType='Seismic', Comment='LC1')    #Forces in N
-
+anchor.Model.Loads.Combos.add(Fx=1000, Fy=1000, Fz=2000, Mx=1000, My=2000, Mz=3000, LoadType='Seismic', Comment='LC2')    #Forces in N; Moments in N-mm
 anchor.Model.apply()            #Apply the changes
 anchor.xml_content()            #Get contents of `.pe` file
 anchor.save('nosync-test.pe')   #Save file to destination

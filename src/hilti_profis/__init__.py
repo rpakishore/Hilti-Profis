@@ -1,5 +1,5 @@
 "Python binding for generating `.pe` files, for use with Hilti-Profis software."
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 from .utils.logger import log
 from hilti_profis.main import PE

@@ -34,8 +34,17 @@ class Combos(MasterModule):
             existing.append(new_load)
             self.data['LoadCombinationEntity'] = existing
         elif isinstance(existing, dict):
-            self.data['LoadCombinationEntity'] = [existing, new_load]
+            # Check if default combo and delete if True
+            if existing.get('Id') == 'a6a61348-62b6-4aac-9cd0-7dfa8afd4cd0':
+                self.delete_existing()
+                self.data['LoadCombinationEntity'] = new_load
+            else:
+                self.data['LoadCombinationEntity'] = [existing, new_load]
         elif existing is None:
             self.data['LoadCombinationEntity'] = new_load
         else:
             raise Exception(f'Method {self.__class__.__name__}.{self.__name__} not implemented.')
+        
+    def delete_existing(self) -> None:
+        """Deletes the existing load combinations"""
+        self.data['LoadCombinationEntity'] = None

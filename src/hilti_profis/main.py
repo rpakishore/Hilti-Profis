@@ -3,11 +3,14 @@ from pathlib import Path
 
 from hilti_profis import xmlparser
 from hilti_profis.Model import DesignModel
+from hilti_profis.utils.logger import log
 
 class PE:
-    def __init__(self, basefile: Path|str|None = None) -> None:
+    def __init__(self, basefile: Path|str|None = None, disable_logging: bool=False) -> None:
         self.basefile: Path|str = basefile or Path(__file__).parent / 'basefile.pe'
         self.Model = DesignModel(basefile=xmlparser.read_xml(self.basefile))
+        if disable_logging:
+            log.setLevel(40)
         
     def __repr__(self) -> str:
         return f'PE(basefile={self.basefile})'

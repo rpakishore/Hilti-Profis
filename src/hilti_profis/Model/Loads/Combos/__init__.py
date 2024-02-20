@@ -1,5 +1,7 @@
-from hilti_profis.Config import MasterModule
+from typing import Literal
 import uuid
+
+from hilti_profis.Config import MasterModule
 
 class Combos(MasterModule):
     def __init__(self, basefile: dict) -> None:
@@ -8,7 +10,8 @@ class Combos(MasterModule):
         super().__init__(basefile, headerpath, submodules_list)
         
     def add(self, Fx: float=0, Fy: float=0, Fz: float=0, 
-            Mx:float=0, My:float=0, Mz:float=0, LoadType='Seismic', Comment: str=""):
+            Mx:float=0, My:float=0, Mz:float=0, 
+            LoadType: Literal['Static','Seismic']='Seismic', Comment: str=""):
         new_load = {
             'Id': str(uuid.uuid4()),
             'ForceZ': str(Fz),
